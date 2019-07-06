@@ -408,3 +408,171 @@ ________________________________________________________________________________
 	
 Jawaban Praktikum
 ----------------------------------------------------------------------------------------------------------------------------------------
+#Nomer 1
+
+	class matriks:
+    		def __init__(self,baris,kolom):
+        		self.b = []
+        		self.baris = baris
+        		self.kolom = kolom
+        		for line in range (self.baris):
+            			k = []
+            			for cols in range(self.kolom):
+                			k.append(0)
+            			self.b.append(k)
+        		inp = int(input("Masukkan jumlah element: "))
+        		for i in range(inp):
+            			bar = str(input("Baris ke ? "))
+            			kol = str(input("Kolom ke ? "))
+            			element = str(input("baris [{}][{}] : ".format(bar.kol)))
+            			self.b[bar][kol] = element
+            
+    		def __str__(self):
+        		data = ""
+        		for i in range(len(self.b)):
+            			data += "| "
+            			for t in range(len(self.b[0])):
+                			data += str(self.b[i][t])
+            			data += " |\n"
+        		return data
+    
+    		def __add__(self, tambah):
+        		angka = "1234567890"
+        		mat1 =[]
+        		kol1 = []
+        		hasil = []
+        		data = ""
+        		for t in range(len(tambah.b)):
+            			if str(tambah.b[t]) in angka:
+                			kol1.append(tambah.b[t])
+            			else:
+                			kol1 = []
+                			mat1.append(kol1)
+        		if len(self.b) == len(tambah.b):
+            			if len(tambah.b[0]) == len(self.b[0]):
+                			for u in range(len(self.b)):
+                    				data += "| "
+                    				kolo =[]
+                    				for j in range(le(self.b[0])):
+                        				has = tambah.b[u][j] + self.b[u][j]
+                        				data += str(has)
+                        				kolo.append(has)
+                    				mat1.append(kolo)
+                    				data += " |\n"
+                			return "Hasil Penjumlahan\n" + data
+            			else:
+                			return "Penjumlahan tidak bisa dilakukan karena jumlah kolom tidak sama"
+        		else:
+            			return "Penjumlahan tidak bisa dilakukan karena jumlah baris tidak sama"
+          
+		def __mul__(self, kali):
+        		angka = "1234567890"
+        		data = ""
+        		mat1 = []
+        		kol1 = []
+        		for t in range(len(kali.b)):
+            			if str(kali.b[t]) in angka:
+                			kol1.append(kali.b[t])
+            			else:
+                			kol1 = []
+                			mat1.append(kol1)
+        		if len(self.b[0]) == len(kali.b):
+            			mat_bar = []
+            			for i in range(len(self.b)):
+                			data += "| "
+                			hasil = 0
+                			mat_kol = []
+                			for y in range(len(kali.b[0])):
+                    				for t in range(len(self.b[0])):
+                        				a= self.b[i][t]
+                        				b= kali.b[t][y]
+                        				perkalian = a*b
+                        				hasil = hasil + perkalian
+                    				data += str(hasil)
+                    				mat_kol.append(hasil)
+                			mat_bar.append(hasil)
+                			data += " |\n"
+            			return "hasil dari perkalian = \n" + data
+        		else:
+            			return "perkalian tidak bisa dilakukan karena jumlah kolom matriks1 tidak sama"
+
+	obj1 = matriks(2,2)
+	print(obj1)
+	obj2 = matriks(2,2)
+	print(obj2)
+	jumlah = obj1.__add__(obj2)
+	print(jumlah)
+
+	kali = obj1.__mul__(obj2)
+	print(kali)
+
+#Nomer 2
+
+          class Node:
+              def __init__(self,data):
+                  self.data = data
+                  self.next = None
+
+
+          class LinkedList:
+              def __init__(self):
+                  self.head = None
+              def push(self,new_data):
+                  new_node= Node(new_data)
+                  new_node.next = self.head
+                  self.head = new_node
+              def sum2Lists(self,list1,list2):
+                  prev=None
+                  temp=None
+                  carry = 0
+                  while (list1 is not None or list2 is not None):
+                      if list1 is None:
+                          fdata=0
+                      else:
+                          fdata=list1.data
+                      if list2 is None:
+                          sdata=0
+                      else:
+                          sdata=list2.data
+                      Sum = carry + fdata + sdata
+                      temp = Node(Sum)
+                      if self.head is None:
+                          self.head = temp
+                      else:
+                          prev.next = temp
+                      prev = temp
+                      if list1 is not None:
+                          list1 = list1.next
+                      if list2 is not None:
+                          list2= list2.next
+                  if carry > 0:
+                      temp.next = Node(carry)
+              def printList(self):
+                  temp=self.head
+                  x=[]
+                  while(temp):
+                      x.append(temp.data)
+                      temp=temp.next
+                  print(x)
+
+          list1=LinkedList()
+          list2=LinkedList()
+
+          n=int(input('Banyak data untuk list 1 : '))
+          for i in range (n):
+              x = int(input('Data : '))
+              list1.push(x)
+              i=i+1
+          m=int(input('Banyak data untuk list 2 : '))
+          for j in range (m):
+              y=int(input('Data : '))
+              list2.push(y)
+              j=j+1
+          truck= LinkedList()
+          truck.sum2Lists(list1.head, list2.head)
+          print("First List is ")
+          list1.printList()
+          print("Second List is ")
+          list2.printList()
+          print("Result List is ")
+          truck.printList()
