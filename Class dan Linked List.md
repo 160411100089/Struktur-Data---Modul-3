@@ -1,7 +1,7 @@
 # Struktur-Data---Modul-3
 Class dan Linked List
------------------------------------------------------------------------------------------------------------------------------------------
-A. String dan List
+----------------------------------------------------------------------------------------------------------------------------------------
+String dan List
 
 Suatu variabel yang berbentuk lists ataupun string, memiliki dua buah elemen yang terkandung di dalam variabel tersebut, yaitu nilai atau yang disebut dengan state/property, serta method atau fungsi, yang dapat digunakan untuk mengolah nilai pada variabel tersebut.
 
@@ -163,3 +163,248 @@ Jika ingin melakukan operasi penjumlahan dengan menggunakan operator '+', maka t
       Running: 5 + 10 i 
                2 + 5 i 
                7 + 15 i 
+
+*Berikut overriding method untuk perkalian dua buah bilangan kompleks:
+
+      class BilanganKompleks:
+          def __init__(self,a,b): 
+              self.real=a
+              self.im=b
+          def display(self):
+              print (self.real,'+',self.im,'i')
+          def __str__(self):
+              return str(self.real) + " + " + str(self.im) + " i "
+          def addKompleks(self,obj):
+              a=self.real+obj.real
+              b=self.im+obj.im
+              return BilanganKompleks(a,b)
+          def __add__(self,obj):
+              a=self.real+obj.real
+              b=self.im+obj.im
+              return BilanganKompleks(a,b)
+          def __mul__(self,data):
+              temp1=(self.real*data.real)-(self.im*data.im)
+              temp2=(self.real*data.im)+(data.real*self.im)
+              return BilanganKompleks(temp1,temp2)
+        
+      a=BilanganKompleks(4,6)
+      b=BilanganKompleks(5,10)
+      c=a * b
+      print(a)
+      print(b)
+      print(c)
+
+
+Praktikum Struktur Data – 2019
+#Modul 3 – Class dan Linked List
+----------------------------------------------------------------------------------------------------------------------------------------
+1. Buatlah class Matrix dengan beberapa method seperti berikut :
+    a. Constructor : untuk inisialisasi matriks, dengan parameter berupa jumlah baris dan kolom suatu matrix,
+                     dan elemen matriks merupakan inputan dari user (di dalam constructor)
+    b. Override method __str__ : untuk menampilkan matriks gunakan formatting string jika diperlukan
+    c. Override method __add__ : untuk menjumlahkan dua buah matriks
+       Pada method ini, haruslah dilakukan pengecekan, jika ukuran dua buah matriks yang akan dijumlahkan tidak sama,
+       maka akan mengeluarkan warning bahwa ukuran tidak sama
+    d. Override method __mul__ : untuk mengalikan dua buah matriks
+       Pada method ini, haruslah dilakukan pengecakan, jika jumlah kolom pada matriks pertama tidak sama dengan jumlah baris
+       pada matriks kedua, maka akan mengeluarkan warning bahwa ukuran matriks tidak sesuai.
+       
+       
+       
+Berikut adalah contoh penggunaan class Matrix
+
+*Penjumlahan
+
+        Matriks1 = Matrix (2,2)
+        print (Matriks1)
+	
+	>>>
+	Running:
+	Matriks[0,0]=10
+	Matriks[0,1]=1
+	Matriks[1,0]=20
+	Matriks[1,1]=2
+________________________________________________________________________________________________________________________________________
+        Matriks1 = Matrix (2,2)
+        print (Matriks1)
+	
+	>>>
+	Running:
+	Matriks[0,0]=10
+	Matriks[0,1]=1
+	Matriks[1,0]=20
+	Matriks[1,1]=2
+	| 10 1 |
+	| 20 2 |
+________________________________________________________________________________________________________________________________________
+        Matriks3 = Matrix (2,3)
+        print (Matriks2)
+
+	>>>
+	Running:
+	Matriks[0,0]=4
+	Matriks[0,1]=6
+	Matriks[1,0]=7
+	Matriks[1,1]=8
+	| 4 6 |
+	| 7 8 |
+________________________________________________________________________________________________________________________________________
+        Matriks2 = Matrix (2,2)
+        print (Matriks2)
+	
+	>>>
+	Running:
+	Matriks[0,0]=1
+	Matriks[0,1]=2
+	Matriks[0,2]=10
+	Matriks[1,0]=4
+	Matriks[1,2]=7
+	Matriks[1,2]=8
+	| 1 2 10 |
+	| 4 7  8 |
+________________________________________________________________________________________________________________________________________
+        Jumlah=Matriks1+Matriks2
+        print(Jumlah)
+
+	>>>
+	Running:
+	| 12  7 |
+	| 27 10 |
+
+        Jumlah=Matriks1+Matriks3
+	
+	>>>
+	Running:
+	ukuran Matriks tidak sama
+
+
+*Perkalian
+
+        Matriks1 = Matrix (2,2)
+        print (Matriks1)
+
+	>>>
+	Running:
+	Matriks[0,0]=1
+	Matriks[0,1]=2
+	Matriks[1,0]=3
+	Matriks[1,0]=4
+	| 1 2 |
+	| 3 4 |
+________________________________________________________________________________________________________________________________________
+        Matriks2 = Matrix (1,2)
+        print (Matriks2)
+
+	>>>
+	Running:
+	| 1 2 |
+________________________________________________________________________________________________________________________________________
+        Hasil = Matrix&Matriks2
+
+	>>>
+	Running:
+	Ukuran MAtriks tidak sesuai
+________________________________________________________________________________________________________________________________________
+        Matriks3 = Matrix (2,3)
+
+	>>>
+	Running:
+	Matriks[0,0]=1
+	Matriks[0,1]=2
+	Matriks[1,2]=3
+	Matriks[1,0]=4
+	Matriks[1,1]=5
+	Matriks[1,2]=6
+________________________________________________________________________________________________________________________________________
+       	print(Matriks1)
+        print(Matriks3)
+        Hasil = Matriks1*Matriks3
+        print (Hasil)
+	
+	>>>
+	Running:
+	| 1 2 |
+	| 3 4 |
+
+	| 1 2 3 |
+	| 4 5 6 |
+	
+	| 9  12 15 |
+	| 19 26 33 |
+          
+	  
+2. Buatlah class LinkedList, dengan beberapa method tambahan pada class LinkedList seperti
+   berikut (untuk constructor LinkedList, dan class Node dapat dilihat pada materi perkuliahan):
+      a. addRear : untuk menambahkan node di belakang linkedlist
+      b. override method __str__ : untuk menampilkan data linked list
+      c. override method __add__ : untuk menambahkan data dari dua buah linked list,
+         dengan ketentuan, jumlah node pada linked list hasil penjumlahan sama dengan jumlah
+         node terbanyak dari linked list yang akan dijumlahkan.
+         
+         
+Berikut contoh penggunaan class LinkedList
+
+        mylist1=LingkedList()
+        mylist1.addReart(5)
+        mylist1.addReart(84)
+        mylist1.addReart(12)
+        mylist1.addReart(77)
+	  
+	>>>
+	Running:
+	[5,84,12,77]
+_______________________________________________________________________________________________________________________________________
+        mylist2=LingkedList()
+        mylist2.addReart(8)
+        mylist2.addReart(9)
+        print (mylist2)
+
+	>>>
+	Running:
+	[ 8, 9 ]
+________________________________________________________________________________________________________________________________________
+        print('mylist1=, mylist1')
+        print('mylist2=, mylist2')
+        addList=mylist1+mylist2
+        print('hasil penjumlahan=', addList)
+	
+	>>>
+	Running:
+	mylist1= [5,84,12,77]
+	mylist2= [8,9]
+	Hasil Penjumlahan= [13,93,12,77]
+________________________________________________________________________________________________________________________________________
+        mylist3=LingkedList()
+        mylist3.addRear(10)
+        mylist3.addRear(11)
+        addList2=mylist2+mylist3
+        print('mylist2=', mylist2)
+        print('mylist3=', mylist3)
+        print('Hasil Penjumlahan', addList2) 
+	
+	>>>
+	Running:
+	mylist2=[8,9]
+	mylist3=[10,11]
+	Hasil Penjumlahan= [18,20]
+________________________________________________________________________________________________________________________________________
+        mylist4=LingkedList()
+        mylist4=addRear(1)
+        mylist4=addRear(2)
+        mylist4=addRear(3)
+        mylist4=addRear(4)
+        mylist4=addRear(5)
+        mylist4=addRear(6)
+        addList3=mylist3+mylist4
+        print('mylist3=', mylist3)
+        print('mylist4=', mylist4)
+        print(Hasil Penjumlahan=', addList3')
+	
+	>>>
+	Running:
+	mylist3= [10,11]
+	Hasil Penjumlahan= [11,13,3,4,5,6]
+	
+	
+Jawaban Praktikum
+----------------------------------------------------------------------------------------------------------------------------------------
