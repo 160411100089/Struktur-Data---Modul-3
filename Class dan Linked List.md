@@ -1,7 +1,11 @@
 # Struktur-Data---Modul-3
 Class dan Linked List
 ----------------------------------------------------------------------------------------------------------------------------------------
-String dan List
+A. Class
+
+Class adalah salah satu cara bagaimana kita membuat sebuah kode yang mempunyai behaviour tertentu dan lebih mudah dalam mengorganisasi berbagai fungsi dan state-nya. Dalam sebuah class kamu dapat menyimpan sebuah state tanpa harus membuat banyak state bila tidak menggunakan class. Dalam hal ini, kita dapat membuat sebuah objek yang memiliki variable dan method-nya sendiri. Dan setiap objek yang dihasilkan akan memiliki karakteristik yang berbeda dibandingkan objek lainnya. 
+
+#String dan List
 
 Suatu variabel yang berbentuk lists ataupun string, memiliki dua buah elemen yang terkandung di dalam variabel tersebut, yaitu nilai atau yang disebut dengan state/property, serta method atau fungsi, yang dapat digunakan untuk mengolah nilai pada variabel tersebut.
 
@@ -194,6 +198,63 @@ Jika ingin melakukan operasi penjumlahan dengan menggunakan operator '+', maka t
       print(b)
       print(c)
 
+B. Linked List
+Bahasa pemrograman python telah menyediakan type data yang dinamis, yaitu List. Ukuran dari variabel yang bertipe data list dapat diatur sesuai dengan keinginan programmer selama program dijalankan, tidak harus mempunyai ukuran tetap di awal. Tipe data ini juga menyediakan method menambah data pada saat diperlukan, sehingga tipe data ini bersifat dinamis. 
+
+Lima hal utama yang terdapat pada struktur data linked list:
+
+- Node
+
+- Linked List
+
+- Penambahan Data pada Linked List
+
+- Traversal Linked List
+
+- Ordered List
+
+#Node
+
+Data di dalam memory berada di alamat yang berbeda-beda, jika dibutuhkan agar data-data tersebut dapat terhubung satu sama lain, maka informasi tambahan yang menunjukkan alamat data berikutnya sangatlah diperlukan.
+
+Untuk membuat struktur data linked list, terlebih dahulu dibuat node-node penyusun linked list tersebut. Node ini harus memiliki setidaknya dua informasi, yaitu informasi mengenai data atau nilai, dan informasi mengenai node berikutnya. Oleh karena itu node dibuat menjadi sebuah tipe data baru yang bertipe class, dengan dua informasi yaitu data dan next.
+
+Terdapat beberapa method penting pada class node ini, antara lain:
+
+a. constructor, yang akan dijalankan setiap instansiasi class
+
+b. getData, untuk mengetahui informasi data yang terdapat pada node tersebut
+
+c. getNext, untuk mengetahui informasi node berikutnya, jika tidak ada node berikutnya maka nilai balik berupa None
+
+d. setData, untuk merubah informasi data yang terdapat pada node tersebut
+
+e. setNext, untuk menentukan node berikutnya yang ditunjukan oleh informasi next dari node tersebut
+
+#Linked List Class
+
+Linked list merupakan kumpulan dari node-node yang terhubung satu sama lain. Untuk mengakses node-node yang terdapat pada linked list tersebut, haruslah diketahui terlebih dahulu lokasi node pertama dari suatu linked list, sehingga diperlukan pointer tambahan untuk menunjukkan keberadaan node pertama
+
+Berikut adalah class untuk linked list, dimana pada class tersebut terdapat pointer yang menunjukkan node pertama dari suatu linked list (head). Terdapat dua buah method utama pada class LinkedList ini, antara lain:
+
+1. constructor, __init__, yang merupakan method yang dijalankan pada saat pembuatan obyek. Karena obyek baru pertama kali dibuat, maka linked list masih kosong, sehingga pointer head masih bernilai None.
+
+2. Method isEmpty, untuk pengecekan apakah linked list memiliki node ataukah tidak. Jika pointer head masih menunjuk pada None, maka linked list masih tidak memiliki node, sehingga return value adalah True.
+
+#Penambahan Data pada Linked List
+
+Secara default, penambahan data baru diletakkan pada awal linked list atau yang terdapat pada pointer head. Penambahan data baru ini, dilakukan dengan dua tahapan :
+
+- Tautkan node baru ini ke node awal dari linked list
+- modifikasi head dari linked list agar menunjuk pada node baru ini
+
+Berikut adalah penambahan method add() pada class LinkedList. Seperti yang dijelaskan sebelumnya, penambahan node baru harus dilakukan dengan urutan yang tepat, yaitu:
+
+	temp=Node(item) #temp adalah node baru yang akan ditambahkan
+	
+	temp.setNext(self.head) #pointer Next dari node temp menunjuk pada node yang ditunjuk oleh pointer head
+	
+	self.head=temp #pointer head menunjuk pada node temp yang sudah tersambung dengan linked list
 
 Praktikum Struktur Data – 2019
 #Modul 3 – Class dan Linked List
