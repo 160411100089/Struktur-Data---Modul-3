@@ -222,15 +222,15 @@ Untuk membuat struktur data linked list, terlebih dahulu dibuat node-node penyus
 
 Terdapat beberapa method penting pada class node ini, antara lain:
 
-a. constructor, yang akan dijalankan setiap instansiasi class
+- constructor, yang akan dijalankan setiap instansiasi class
 
-b. getData, untuk mengetahui informasi data yang terdapat pada node tersebut
+- getData, untuk mengetahui informasi data yang terdapat pada node tersebut
 
-c. getNext, untuk mengetahui informasi node berikutnya, jika tidak ada node berikutnya maka nilai balik berupa None
+- getNext, untuk mengetahui informasi node berikutnya, jika tidak ada node berikutnya maka nilai balik berupa None
 
-d. setData, untuk merubah informasi data yang terdapat pada node tersebut
+- setData, untuk merubah informasi data yang terdapat pada node tersebut
 
-e. setNext, untuk menentukan node berikutnya yang ditunjukan oleh informasi next dari node tersebut
+- setNext, untuk menentukan node berikutnya yang ditunjukan oleh informasi next dari node tersebut
 
 #Linked List Class
 
