@@ -339,11 +339,9 @@ ________________________________________________________________________________
       
       b. override method __str__ : untuk menampilkan data linked list
       
-      c. override method __add__ : untuk menambahkan data dari dua buah linked list,
-         dengan ketentuan, jumlah node pada linked list hasil penjumlahan sama dengan jumlah
-         node terbanyak dari linked list yang akan dijumlahkan.
+      c. override method __add__ : untuk menambahkan data dari dua buah linked list, dengan ketentuan, jumlah node pada linked list hasil penjumlahan sama dengan jumlah node terbanyak dari linked list yang akan dijumlahkan.
          
-         
+       
 Berikut contoh penggunaan class LinkedList
 
         mylist1=LingkedList()
