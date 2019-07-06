@@ -199,6 +199,7 @@ Jika ingin melakukan operasi penjumlahan dengan menggunakan operator '+', maka t
       print(c)
 
 B. Linked List
+
 Bahasa pemrograman python telah menyediakan type data yang dinamis, yaitu List. Ukuran dari variabel yang bertipe data list dapat diatur sesuai dengan keinginan programmer selama program dijalankan, tidak harus mempunyai ukuran tetap di awal. Tipe data ini juga menyediakan method menambah data pada saat diperlukan, sehingga tipe data ini bersifat dinamis. 
 
 Lima hal utama yang terdapat pada struktur data linked list:
