@@ -199,15 +199,14 @@ Praktikum Struktur Data – 2019
 #Modul 3 – Class dan Linked List
 ----------------------------------------------------------------------------------------------------------------------------------------
 1. Buatlah class Matrix dengan beberapa method seperti berikut :
-    a. Constructor : untuk inisialisasi matriks, dengan parameter berupa jumlah baris dan kolom suatu matrix,
-                     dan elemen matriks merupakan inputan dari user (di dalam constructor)
+    
+    a. Constructor : untuk inisialisasi matriks, dengan parameter berupa jumlah baris dan kolom suatu matrix, dan elemen matriks merupakan inputan dari user (di dalam constructor)
+		     
     b. Override method __str__ : untuk menampilkan matriks gunakan formatting string jika diperlukan
-    c. Override method __add__ : untuk menjumlahkan dua buah matriks
-       Pada method ini, haruslah dilakukan pengecekan, jika ukuran dua buah matriks yang akan dijumlahkan tidak sama,
-       maka akan mengeluarkan warning bahwa ukuran tidak sama
-    d. Override method __mul__ : untuk mengalikan dua buah matriks
-       Pada method ini, haruslah dilakukan pengecakan, jika jumlah kolom pada matriks pertama tidak sama dengan jumlah baris
-       pada matriks kedua, maka akan mengeluarkan warning bahwa ukuran matriks tidak sesuai.
+    
+    c. Override method __add__ : untuk menjumlahkan dua buah matriks. Pada method ini, haruslah dilakukan pengecekan, jika ukuran dua buah matriks yang akan dijumlahkan tidak sama, maka akan mengeluarkan warning bahwa ukuran tidak sama
+    
+    d. Override method __mul__ : untuk mengalikan dua buah matriks. Pada method ini, haruslah dilakukan pengecakan, jika jumlah kolom pada matriks pertama tidak sama dengan jumlah baris pada matriks kedua, maka akan mengeluarkan warning bahwa ukuran matriks tidak sesuai.
        
        
        
@@ -335,8 +334,11 @@ ________________________________________________________________________________
 	  
 2. Buatlah class LinkedList, dengan beberapa method tambahan pada class LinkedList seperti
    berikut (untuk constructor LinkedList, dan class Node dapat dilihat pada materi perkuliahan):
+   
       a. addRear : untuk menambahkan node di belakang linkedlist
+      
       b. override method __str__ : untuk menampilkan data linked list
+      
       c. override method __add__ : untuk menambahkan data dari dua buah linked list,
          dengan ketentuan, jumlah node pada linked list hasil penjumlahan sama dengan jumlah
          node terbanyak dari linked list yang akan dijumlahkan.
